@@ -2,7 +2,11 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 const app = express();
+
+
 const authRouter = require('./Routes/auth');
+const userRouter = require('./Routes/user');
+const statusRouter = require('./Routes/status');
 dotenv.config()
 
 //db connection
@@ -21,6 +25,8 @@ mongoose.connection.on('error', err => {
 app.use(express.json());
 
 app.use('/api', authRouter);
+app.use('/api', userRouter);
+app.use('/api', statusRouter);
 
 const port = process.env.PORT || 8000
 app.listen(port, () => {
