@@ -10,6 +10,10 @@ const friendSchema = new mongoose.Schema({
   },
   friends: {
     type: Object,
+  },
+  status: {
+    type: Boolean,
+    default: false,
   }
 }, {
   timestamps: true

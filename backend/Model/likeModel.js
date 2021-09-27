@@ -12,6 +12,10 @@ const likeSchema = new mongoose.Schema({
     type: ObjectId,
     ref: 'Status',
     required: true,
+  },
+  amount: {
+    type: Number,
+    default: 0
   }
 }, {
   timestamps: true

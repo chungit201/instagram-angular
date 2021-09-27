@@ -6,7 +6,7 @@ export const listStatus = (req, res) => {
   let sortBy = req.query.sortBy ? req.query.sortBy : '_id';
   let limit = req.query.limit ? +req.query.limit : 100;
 
-  Status.find({}).limit(limit).populate('user', 'name').exec((err, status) => {
+  Status.find({}).limit(limit).populate('user like', 'name amount user').exec((err, status) => {
     if (err) {
       return res.status(400).json({
         error: "product does not exit"
@@ -20,7 +20,7 @@ export const listStatus = (req, res) => {
 
 // Lấy id của bài post
 export const statusID = (req, res, next, id) => {
-  Status.findById(id).populate('user', 'name')
+  Status.findById(id).populate('user like', 'name amount user')
     .exec((err, status) => {
       if (err || !status) {
         res.status(400).json({

@@ -13,6 +13,10 @@ const commentSchema = new mongoose.Schema({
     type: ObjectId,
     ref: 'Status',
     required: true,
+  },
+  content: {
+    type: String,
+    maxLength: 1000
   }
 }, {
   timestamps: true

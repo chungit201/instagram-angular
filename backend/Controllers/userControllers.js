@@ -2,7 +2,6 @@ import User from '../Model/userModel';
 
 // lấy id của profile
 export const userID = (req, res, next, id) => {
-  console.log(id);
   User.findById(id).exec((err, user) => {
     if (err) {
       return res.status(400).json({

@@ -7,6 +7,8 @@ const app = express();
 const authRouter = require('./Routes/auth');
 const userRouter = require('./Routes/user');
 const statusRouter = require('./Routes/status');
+const likeRouter = require('./Routes/like');
+const commentRouter = require('./Routes/comment');
 dotenv.config()
 
 //db connection
@@ -27,6 +29,8 @@ app.use(express.json());
 app.use('/api', authRouter);
 app.use('/api', userRouter);
 app.use('/api', statusRouter);
+app.use('/api', likeRouter);
+app.use('/api', commentRouter);
 
 const port = process.env.PORT || 8000
 app.listen(port, () => {
