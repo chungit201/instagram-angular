@@ -1,6 +1,6 @@
 import {
   comment
-} from 'postcss';
+} from '../Model/commentModel';
 import Comments from '../Model/commentModel';
 
 export const addComment = (req, res) => {
