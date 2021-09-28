@@ -94,4 +94,22 @@ export class HeaderComponent implements OnInit {
       storiesObserver.observe(document.querySelector('.story:last-child')!);
     }
   }
+
+  //Open Post Form
+  openPostForm(){
+    let modal: any = document.getElementById("myModal");
+    let close: any = document.getElementsByClassName("close")[0];
+
+    modal.style.display = "block";
+
+    close.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+    }
+  }
 }
