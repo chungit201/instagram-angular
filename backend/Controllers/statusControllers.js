@@ -59,7 +59,6 @@ export const createStatus = (req, res) => {
   status.save((err, data) => {
     if (err) {
       return res.status(400).json({
-
         error: err
       })
     }
@@ -71,7 +70,6 @@ export const createStatus = (req, res) => {
 }
 
 // cập nhật bài post
-
 export const updateStatus = (req, res) => {
   let status = req.status;
   status = Object.assign(status, req.body);
