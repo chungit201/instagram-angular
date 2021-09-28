@@ -28,6 +28,9 @@ const userSchema = new mongoose.Schema({
     type: ObjectId,
     ref: 'Status'
   },
+  birthday: {
+    type: Date,
+  },
   friends: {
     type: ObjectId,
     ref: 'Friends'

@@ -27,6 +27,7 @@ export const commentID = (req, res, next, id) => {
       })
     }
     req.comment = comment;
+    next();
   })
 }
 

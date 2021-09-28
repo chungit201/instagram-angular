@@ -13,6 +13,7 @@ import { MessengerComponent } from './screen/messenger/messenger.component';
 import { StoryComponent } from './screen/main/story/story.component';
 import { SideBarMenuComponent } from './screen/main/side-bar-menu/side-bar-menu.component';
 import { SearchComponent } from './screen/header/search/search.component';
+import { MainComponent } from './screen/main/main.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { SearchComponent } from './screen/header/search/search.component';
     StoryComponent,
     SideBarMenuComponent,
     SearchComponent,
+    MainComponent,
   ],
   imports: [FormsModule, BrowserModule, AppRoutingModule],
   providers: [],
