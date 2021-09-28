@@ -9,6 +9,10 @@ import { PostFormComponent } from './screen/header/post-form/post-form.component
 import { FooterComponent } from './screen/footer/footer.component';
 import { LoginComponent } from './screen/login/login.component';
 import { PostsComponent } from './screen/main/posts/posts.component';
+import { MessengerComponent } from './screen/messenger/messenger.component';
+import { StoryComponent } from './screen/main/story/story.component';
+import { SideBarMenuComponent } from './screen/main/side-bar-menu/side-bar-menu.component';
+import { SearchComponent } from './screen/header/search/search.component';
 
 
 @NgModule({
@@ -19,6 +23,10 @@ import { PostsComponent } from './screen/main/posts/posts.component';
     FooterComponent,
     LoginComponent,
     PostsComponent,
+    MessengerComponent,
+    StoryComponent,
+    SideBarMenuComponent,
+    SearchComponent,
   ],
   imports: [FormsModule, BrowserModule, AppRoutingModule],
   providers: [],
