@@ -14,6 +14,7 @@ import { StoryComponent } from './screen/main/story/story.component';
 import { SideBarMenuComponent } from './screen/main/side-bar-menu/side-bar-menu.component';
 import { SearchComponent } from './screen/header/search/search.component';
 import { MainComponent } from './screen/main/main.component';
+import { SignUpComponent } from './screen/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { MainComponent } from './screen/main/main.component';
     SideBarMenuComponent,
     SearchComponent,
     MainComponent,
+    SignUpComponent
   ],
   imports: [FormsModule, BrowserModule, AppRoutingModule],
   providers: [],

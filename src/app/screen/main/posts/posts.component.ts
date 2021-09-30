@@ -134,4 +134,12 @@ export class PostsComponent implements OnInit {
       }
     });
   }
+
+  //Resize input comment
+  reSizeComment(event: any){
+    const textarea: any = document.querySelector(".textarea_comment");
+    textarea.style.height = "21px";
+    let scHeight = event.target.scrollHeight;
+    textarea.style.height = `${scHeight}px`;
+  }
 }
