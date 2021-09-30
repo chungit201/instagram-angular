@@ -90,7 +90,7 @@ export class PostsComponent implements OnInit {
         const postMediasContainer = post.querySelector('.post__medias')!;
 
         // Functions for left and right buttons
-        console.log(leftButton);
+        // console.log(leftButton);
         leftButton.addEventListener('click', () => {
           postMediasContainer.scrollLeft -= 400;
         });
@@ -136,9 +136,9 @@ export class PostsComponent implements OnInit {
   }
 
   //Resize input comment
-  reSizeComment(event: any){
-    const textarea: any = document.querySelector(".textarea_comment");
-    textarea.style.height = "21px";
+  reSizeComment(event: any) {
+    const textarea: any = document.querySelector('.textarea_comment');
+    textarea.style.height = '21px';
     let scHeight = event.target.scrollHeight;
     textarea.style.height = `${scHeight}px`;
   }

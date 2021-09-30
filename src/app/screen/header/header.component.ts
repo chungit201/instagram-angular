@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
     } else {
       this.bgColor = 'light';
     }
-    this.getButtonStory();
   }
 
   changeBgColor(themeKey: any) {
@@ -43,79 +42,27 @@ export class HeaderComponent implements OnInit {
     return localStorage.getItem('theme')!;
   }
 
-  getButtonStory(): void {
-    const storiesLeftButton = document.querySelector('.stories__left-button');
-    const storiesRightButton = document.querySelector('.stories__right-button');
-    const storiesContent = document.querySelector('.stories__content');
-    this.storiesLeftButton(storiesLeftButton, storiesContent);
-    this.storiesRightButton(storiesRightButton, storiesContent);
-    this.checkScreenStory(
-      storiesLeftButton,
-      storiesRightButton,
-      storiesContent
-    );
-  }
-  storiesLeftButton(btnStory: any, strContent: any): void {
-    btnStory.addEventListener('click', () => {
-      strContent.scrollLeft -= 320;
-    });
-  }
-
-  storiesRightButton(btnStory: any, strContent: any): void {
-    btnStory.addEventListener('click', () => {
-      strContent.scrollLeft += 320;
-    });
-  }
-
-  checkScreenStory(btnStrLeft: any, btnStrRight: any, strContent: any): void {
-    if (window.matchMedia('(min-width: 1024px)').matches) {
-      // Observer to hide buttons when necessary
-      const storiesObserver = new IntersectionObserver(
-        function (entries) {
-          entries.forEach((entry) => {
-            if (entry.target === document.querySelector('.story:first-child')) {
-              btnStrLeft.style.display = entry.isIntersecting
-                ? 'none'
-                : 'unset';
-            } else if (
-              entry.target === document.querySelector('.story:last-child')
-            ) {
-              btnStrRight.style.display = entry.isIntersecting
-                ? 'none'
-                : 'unset';
-            }
-          });
-        },
-        { root: strContent, threshold: 1 }
-      );
-
-      // Calling the observer with the first and last stories
-      storiesObserver.observe(document.querySelector('.story:first-child')!);
-      storiesObserver.observe(document.querySelector('.story:last-child')!);
-    }
-  }
-
   //Open Post Form
-  openPostForm(){
-    let modal: any = document.getElementById("myModal");
-    let close: any = document.getElementsByClassName("close")[0];
+  openPostForm() {
+    let modal: any = document.getElementById('myModal');
+    let close: any = document.getElementsByClassName('close')[0];
 
-    modal.style.display = "block";
+    modal.style.display = 'block';
 
     close.onclick = function () {
-      modal.style.display = "none";
-    }
+      modal.style.display = 'none';
+    };
 
     window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-    }
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
   }
 
   //Open Account Dropdown Menu
-  menuToggle(){
+  menuToggle() {
     const toggleMenu: any = document.querySelector('.profile-button__menu');
-    toggleMenu.classList.toggle('active')
+    toggleMenu.classList.toggle('active');
   }
 }

@@ -4,19 +4,16 @@ import { MessengerComponent } from './screen/messenger/messenger.component';
 import { PostsComponent } from './screen/main/posts/posts.component';
 import { SignUpComponent } from './screen/sign-up/sign-up.component';
 const routes: Routes = [
-  // { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: '',
-    component: PostsComponent
-  },
-  { 
-    path: 'messenger', 
-    component: MessengerComponent 
+    loadChildren: () =>
+      import('./screen/client/client.module').then((m) => m.ClientModule),
   },
   {
-    path: 'sign-up',
-    component: SignUpComponent 
-  }
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
