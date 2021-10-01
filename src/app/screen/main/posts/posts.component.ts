@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-posts',
@@ -6,12 +6,42 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.css'],
 })
 export class PostsComponent implements OnInit {
-  constructor() {}
+
 
   ngOnInit(): void {
     this.postMultipleMedia();
     this.postButtonScroll();
   }
+ 
+
+
+
+    listLike(e:any){
+     e.preventDefault()
+      
+      const likesUser = document.querySelector('.like_user') as HTMLElement;
+      let btnUserLike = document.querySelectorAll('#listLike');    
+      const overBg = document.querySelector('#overBg') as HTMLElement
+      overBg.style.backgroundColor = 'black';
+        overBg.style.opacity = "0.5";
+        overBg.style.position = 'fixed'
+        likesUser.style.display = 'block';
+    }
+    clearBox(e:any){
+      e.preventDefault()
+      const likesUser = document.querySelector('.like_user') as HTMLElement;
+      let btnUserLike = document.querySelectorAll('#listLike');   
+      const overBg = document.querySelector('#overBg') as HTMLElement
+      likesUser.style.display = 'none';
+      overBg.style.backgroundColor ='';
+      overBg.style.position= ''
+    }
+        
+
+
+ 
+
+
 
   // POST MULTIPLE MEDIAS
   // Creating scroll buttons and indicators when post has more than one media
